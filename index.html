@@ -33,7 +33,6 @@
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
         <script src="js/L.Control.Locate.min.js"></script>
-        <script src="js/leaflet-svg-shape-markers.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -57,7 +56,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-36.970674369943225,-180.0],[90.0,180.0]]);
+        }).fitBounds([[51.37834789751062,4.382264060772586],[53.46257267750548,7.614009587129849]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -200,16 +199,12 @@
         function style_loversholidays_1_0() {
             return {
                 pane: 'pane_loversholidays_1',
-                radius: 7.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,0,0,1.0)',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/loversholidays_1.svg',
+            iconSize: [13.299999999999999, 13.299999999999999]
+        }),
                 interactive: true,
             }
         }
@@ -228,7 +223,7 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_loversholidays_1_0(feature));
+                return L.marker(latlng, style_loversholidays_1_0(feature));
             },
         });
         bounds_group.addLayer(layer_loversholidays_1);
