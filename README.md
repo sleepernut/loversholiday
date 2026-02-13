@@ -1,4 +1,3 @@
-[QUICK_REFERENCE.md](https://github.com/user-attachments/files/25295809/QUICK_REFERENCE.md)
 # Quick Reference Cheat Sheet
 
 ## 🚀 How to Use the Improved Script
@@ -61,34 +60,6 @@ Format: `latitude, longitude`
 - Longitude: -180 to +180
 
 ---
-
-## 🔧 What Was Fixed
-
-### Main Issue: Duration Field Not Showing in QGIS
-
-**Problem:**
-```python
-# Old code returned None
-return None  # ❌ QGIS can't display this properly
-```
-
-**Solution:**
-```python
-# New code returns 0
-return 0  # ✅ QGIS displays this as a number
-```
-
-### Other Improvements
-
-1. ✅ Validates coordinates (prevents invalid data)
-2. ✅ Better date formatting (YYYY-MM-DD instead of ISO 8601)
-3. ✅ Added status field (visited/not_visited_yet/same_day_visit)
-4. ✅ Only shows fields that have values
-5. ✅ Better error messages with emojis
-6. ✅ More helpful console output
-
----
-
 ## 🎯 New Features
 
 ### Status Field
@@ -136,78 +107,6 @@ Use this in QGIS to filter or color-code your map!
 
 Now longer stays show in one color, shorter stays in another!
 
----
-
-## 🐍 Python Concepts Used
-
-### Basic Concepts
-
-| Concept | Example | What It Does |
-|---------|---------|-------------|
-| Function | `def calculate_duration():` | Reusable code block |
-| Variable | `duration = 5` | Stores a value |
-| String | `"San Francisco"` | Text data |
-| Integer | `42` | Whole number |
-| Float | `37.7749` | Decimal number |
-| List | `[1, 2, 3]` | Ordered collection |
-| Tuple | `(lat, lon)` | Fixed collection |
-| Dictionary | `{"name": "SF"}` | Key-value pairs |
-
-### Common Operations
-
-```python
-# String methods
-text.strip()         # Remove spaces from ends
-text.split(',')      # Split by comma
-text.startswith('#') # Check if starts with #
-text.lower()         # Convert to lowercase
-
-# List methods
-my_list.append(item)      # Add to end
-len(my_list)              # Get length
-for item in my_list:      # Loop through items
-
-# File operations
-with open(file, 'r') as f:  # Open for reading
-    data = f.read()          # Read all content
-```
-
----
-
-## 🎓 Practice Exercises
-
-### Easy
-
-1. Add your home coordinates to the sample file
-2. Run the script with the sample file
-3. Open the result in QGIS
-
-### Medium
-
-1. Add a new field called "country" to the properties
-2. Modify the date format to show month names (e.g., "15 Jan 2024")
-3. Add validation to check if end_date is after start_date
-
-### Advanced
-
-1. Calculate total distance traveled (hint: use Haversine formula)
-2. Add support for polygons (areas) instead of just points
-3. Create a function to calculate which season the trip was in
-
----
-
-## 🆘 Quick Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| "No module named json" | json is built-in, check Python version |
-| "File not found" | Put .txt file in same folder as script |
-| Duration shows 0 | Check date format (must be ddmmYYYY) |
-| Points not on map | Check coordinate ranges |
-| Invalid coordinates | Lat: -90 to 90, Lon: -180 to 180 |
-
----
-
 ## 💻 Useful Commands
 
 ### Check Python Version
@@ -238,32 +137,6 @@ type sample_coordinates.txt
 cat sample_coordinates.txt
 ```
 
----
-
-## 📖 Learning Path
-
-### Week 1: Basics
-- [ ] Understand variables and data types
-- [ ] Learn about functions
-- [ ] Practice with if/else statements
-
-### Week 2: Data Structures
-- [ ] Master lists and tuples
-- [ ] Learn dictionaries
-- [ ] Understand loops (for/while)
-
-### Week 3: Files and Modules
-- [ ] Reading and writing files
-- [ ] Importing modules
-- [ ] Error handling (try/except)
-
-### Week 4: Project
-- [ ] Modify this script
-- [ ] Add new features
-- [ ] Create your own GIS tool
-
----
-
 ## 🔗 Helpful Links
 
 - Python Official Docs: https://docs.python.org/3/
@@ -271,24 +144,3 @@ cat sample_coordinates.txt
 - GeoJSON Spec: https://geojson.org/
 - QGIS Documentation: https://docs.qgis.org/
 - Test GeoJSON online: http://geojson.io/
-
----
-
-## 📝 Notes Section
-
-Use this space to write your own notes as you learn!
-
-**My Questions:**
-_________________________________________________
-_________________________________________________
-_________________________________________________
-
-**What I Learned:**
-_________________________________________________
-_________________________________________________
-_________________________________________________
-
-**Ideas for Improvements:**
-_________________________________________________
-_________________________________________________
-_________________________________________________
